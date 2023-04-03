@@ -6,14 +6,14 @@ const generator = require('./assets/generator');
 const questions = [
     {
         type: 'input',
-        name: 'characters',
+        name: 'text',
         message: 'Please enter characters',
         default: 'Must be no more than 3 characters long',
     },
 
     {
         type: 'input',
-        name: 'text-color',
+        name: 'textColor',
         message: 'Please enter color for text',
     },
     {
