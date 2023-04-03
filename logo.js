@@ -30,5 +30,21 @@ const questions = [
 
 
 function drawLogo(fileName,data) {
-    inquirer.createPromptModule(questions)
+    inquirer.prompt(questions)
+    fs.writeFile(fileName,data, function(err) {
+        console.log("done")
+        if(err) {
+            return console.log(err)
+        } else {
+            console.log("finished")
+        }
+    });
+};
+
+function create() {
+    inquirer.prompt(questions)
+    .then(function(data) {
+        drawLogo('logo.svg', generator(data));
+    })
 }
+create()

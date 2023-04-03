@@ -6,9 +6,9 @@ function renderShape(shape) {
     } else if (sleShape === 'sqaure') {
         selection = `<rect x="10" y="10" width="30" height="30" fill="${shapeColor}"/>`
     } else if (sleShape === 'triangle') {
-        selection = `polygon points="50, 180 60, 180 45, 180 fill="${shapeColor}"/>`
+        selection = `<polygon points="150, 10 250, 151 50, 150" fill="${data.shapeColor}"/>`
     } else {
-        return Error(err)
+        return shape;
     }
 }
 
