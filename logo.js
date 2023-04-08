@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generator = require('./assets/generator');
+const generator = require('./assets/generator.js');
 
 
 const questions = [
@@ -29,9 +29,10 @@ const questions = [
     }];
 
 
-function drawLogo(fileName,data) {
+function drawLogo(fileName, data) {
+    let json =JSON.stringify
     inquirer.prompt(questions)
-    fs.writeFile(fileName,data, function(err) {
+    fs.writeFile(fileName,data,json, function(err) {
         console.log("done")
         if(err) {
             return console.log(err)
@@ -45,6 +46,7 @@ function create() {
     inquirer.prompt(questions)
     .then(function(data) {
         drawLogo('logo.svg', generator(data));
-    })
-}
-create()
+        console.log(data)
+    });
+};
+create();
